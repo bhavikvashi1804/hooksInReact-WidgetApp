@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Accordion=()=>{
+const Accordion=({items})=>{
     return (
         <h1>
-            Accordion
+            {items.length}
         </h1>
     );
 
