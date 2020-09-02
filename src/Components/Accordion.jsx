@@ -3,10 +3,10 @@ import React from 'react';
 const Accordion=({items})=>{
 
     const renderedItem=items.map(
-        item=>{
+        (item,index)=>{
             return (
                 <React.Fragment key={item.title}>
-                    <div className="title active">
+                    <div className="title active" onClick={()=>console.log('Title clicked at index',index)}>
                         <i className="dropdown icon"></i>
                         {item.title}
                     </div>
@@ -19,7 +19,7 @@ const Accordion=({items})=>{
     );
 
     return (
-        <div className="ui styled accordion">
+        <div className="ui styled accordion" >
              {renderedItem}
         </div>
     );
