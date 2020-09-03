@@ -6,9 +6,12 @@ const Search = () => {
 
     useEffect(
         () => {
-            (async () => {
-                await axios.get("https://en.wikipedia.org/w/api.php?action=query&list=search&format=json&srsearch=Programming");
-            })();
+            axios.get("https://en.wikipedia.org/w/api.php?action=query&list=search&format=json&srsearch=Programming")
+            .then(
+                (response)=>{
+                    console.log(response);
+                }
+            );
         },
         [term]
     );
