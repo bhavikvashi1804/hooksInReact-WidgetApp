@@ -1,12 +1,17 @@
-import React,{useState} from 'react';
-import { useEffect } from 'react';
+import React,{useState,useEffect} from 'react';
+import axios from 'axios';
 
 const Search=()=>{
     const [term,updateTerm]=useState("");
 
     useEffect(
         ()=>{
-            console.log('I at initial render & when my array value changes');
+            //in useEffect you cannot directly use await keyword to use that you habe to make separate function
+            const searchTerm=async() =>{
+               await axios.get("https://en.wikipedia.org/w/api.php?action=query&list=search&format=json&srsearch=Programming");
+            }
+
+            searchTerm();
         },
         [term]
     );
