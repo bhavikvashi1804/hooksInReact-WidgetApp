@@ -37,3 +37,5 @@ const Accordion=({items})=>{
 };
 
 export default Accordion;
+// API for Wikipedia 
+//https://en.wikipedia.org/w/api.php?action=query&list=search&format=json&srsearch=Programming
