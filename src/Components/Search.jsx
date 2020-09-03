@@ -26,7 +26,10 @@ const Search = () => {
                 setResults(data);
             };
 
-            searchTerm();
+            if(term){
+                searchTerm();
+            }
+            
         },
         [term]
     );
