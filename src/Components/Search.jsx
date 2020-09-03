@@ -3,11 +3,14 @@ import axios from 'axios';
 
 const Search = () => {
     const [term, updateTerm] = useState("");
+    const [results,setResults]=useState([]);
+
+    console.log(results);
 
     useEffect(
         () => {
             const searchTerm=async ()=>{
-                await axios.get(
+                const {data}=await axios.get(
                     'https://en.wikipedia.org/w/api.php',
                     {
                         params:{
@@ -19,6 +22,8 @@ const Search = () => {
                         }
                     }
                 );
+
+                setResults(data);
             };
 
             searchTerm();
