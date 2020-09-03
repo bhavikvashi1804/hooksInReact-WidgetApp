@@ -6,12 +6,22 @@ const Search = () => {
 
     useEffect(
         () => {
-            axios.get("https://en.wikipedia.org/w/api.php?action=query&list=search&format=json&srsearch=Programming")
-            .then(
-                (response)=>{
-                    console.log(response);
-                }
-            );
+            const searchTerm=async ()=>{
+                await axios.get(
+                    'https://en.wikipedia.org/w/api.php',
+                    {
+                        params:{
+                            action:'query',
+                            list:'search',
+                            origin:'*',
+                            format:'json',
+                            srsearch:term,
+                        }
+                    }
+                );
+            };
+
+            searchTerm();
         },
         [term]
     );
