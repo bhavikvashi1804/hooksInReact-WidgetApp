@@ -1,9 +1,15 @@
 import React,{useState} from 'react';
+import { useEffect } from 'react';
 
 const Search=()=>{
     const [term,updateTerm]=useState("");
 
-    
+    useEffect(
+        ()=>{
+            console.log('I only run once');
+        },
+        []
+    );
 
     return(
         <div>
