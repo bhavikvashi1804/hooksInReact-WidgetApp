@@ -6,9 +6,8 @@ const Search=()=>{
 
     useEffect(
         ()=>{
-            console.log('I only run once');
+            console.log('I run after every render also for initial render');
         },
-        []
     );
 
     return(
