@@ -19,10 +19,25 @@ const items = [
   },
 ];
 
+const options = [
+  {
+    label: 'The Color Red',
+    value: 'red',
+  },
+  {
+    label: 'The Color Green',
+    value: 'green',
+  },
+  {
+    label: 'The Color Yellow',
+    value: 'yellow',
+  },
+];
+
 export default () => {
   return (
     <div className="ui container">
-      <Dropdown />
+      <Dropdown options={options}/>
     </div>
   );
 }
