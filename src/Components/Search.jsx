@@ -26,9 +26,12 @@ const Search = () => {
                     search();
                 }
             },
-            500
+            1000
         );
         
+        return ()=>{
+            clearTimeout(timerID);
+        };
 
     }, [term]);
 
