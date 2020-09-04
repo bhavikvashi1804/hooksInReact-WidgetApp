@@ -2,6 +2,7 @@ import React from 'react';
 
 import Accordion from './Components/Accordion';
 import Search from './Components/Search';
+import Dropdown from './Components/Dropdown';
 
 const items = [
   {
@@ -21,8 +22,7 @@ const items = [
 export default () => {
   return (
     <div className="ui container">
-      {/* <Accordion items={items} />  */}
-      <Search />
+      <Dropdown />
     </div>
   );
 }
