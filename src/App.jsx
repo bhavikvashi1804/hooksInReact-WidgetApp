@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import Accordion from './Components/Accordion';
 import Search from './Components/Search';
@@ -35,14 +35,40 @@ const options = [
   },
 ];
 
+const showAccordion = () => {
+  if (window.location.pathname === "/") {
+    return <Accordion items={items} />;
+  }
+}
+
+const showList=()=>{
+  if(window.location.pathname==="/list"){
+    return <Search />;
+  }
+}
+
+const showDropdown=()=>{
+  if(window.location.pathname==="/dropdown"){
+    return <Dropdown />;
+  }
+}
+
+const showTranslate = () => {
+  if (window.location.pathname === "/translate") {
+    return <Translate />;
+  }
+}
+
+
+
+
 export default () => {
-
-  const [selected, setSelected] = useState(options[0]);
-  const [showDropdown, updateShowDropdown] = useState(true);
-
   return (
     <div className="ui container">
-      <Translate />
+      {showAccordion()}
+      {showList()}
+      {showDropdown()}
+      {showTranslate()}
     </div>
   );
 }
