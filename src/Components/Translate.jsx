@@ -1,5 +1,5 @@
-import React,{useEffect} from 'react';
-import { useState } from 'react';
+import React,{ useState } from 'react';
+
 
 import Dropdown from './Dropdown';
 import Convert from './Convert';

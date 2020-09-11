@@ -5,6 +5,9 @@ import Search from './Components/Search';
 import Dropdown from './Components/Dropdown';
 import Translate from './Components/Translate';
 
+import Route from './Components/Route';
+import { useState } from 'react';
+
 const items = [
   {
     title: 'What is React?',
@@ -35,40 +38,28 @@ const options = [
   },
 ];
 
-const showAccordion = () => {
-  if (window.location.pathname === "/") {
-    return <Accordion items={items} />;
-  }
-}
-
-const showList=()=>{
-  if(window.location.pathname==="/list"){
-    return <Search />;
-  }
-}
-
-const showDropdown=()=>{
-  if(window.location.pathname==="/dropdown"){
-    return <Dropdown />;
-  }
-}
-
-const showTranslate = () => {
-  if (window.location.pathname === "/translate") {
-    return <Translate />;
-  }
-}
-
-
-
-
 export default () => {
+  const [selectedOption,setSelectedOption]=useState(options[0]);
+
   return (
     <div className="ui container">
-      {showAccordion()}
-      {showList()}
-      {showDropdown()}
-      {showTranslate()}
+      <Route path="/">
+        <Accordion items={items}/>
+      </Route>
+      <Route path="/list">
+        <Search />
+      </Route>
+      <Route path="/dropdown">
+        <Dropdown
+          label="Select Color"
+          options={options} 
+          selected={selectedOption}
+          onSelectedChange={setSelectedOption}
+        />
+      </Route>
+      <Route path="/translate">
+        <Translate />
+      </Route>
     </div>
   );
 }
