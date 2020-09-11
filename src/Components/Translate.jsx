@@ -16,7 +16,11 @@ const options=[
     {
         label:'Hindi',
         value:'hi',
-    }
+    },
+    {
+        label:'Dutch',
+        value:'nl',
+    },
 ];
 
 const Translate=()=>{
