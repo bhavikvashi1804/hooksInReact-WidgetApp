@@ -1,12 +1,12 @@
-import React from 'react';
+import React,{useState} from 'react';
 
 import Accordion from './Components/Accordion';
 import Search from './Components/Search';
 import Dropdown from './Components/Dropdown';
 import Translate from './Components/Translate';
-
+import Header from './Components/Header';
 import Route from './Components/Route';
-import { useState } from 'react';
+
 
 const items = [
   {
@@ -43,6 +43,7 @@ export default () => {
 
   return (
     <div className="ui container">
+      <Header />
       <Route path="/">
         <Accordion items={items}/>
       </Route>
