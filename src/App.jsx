@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Accordion from './Components/Accordion';
 import Search from './Components/Search';
 import Dropdown from './Components/Dropdown';
+import Translate from './Components/Translate';
 
 const items = [
   {
@@ -41,11 +42,7 @@ export default () => {
 
   return (
     <div className="ui container">
-      <button onClick={() => updateShowDropdown(!showDropdown)} >Toggle Dropdown</button>
-
-      {showDropdown ?
-        <Dropdown options={options} selected={selected} onSelectedChange={setSelected} /> : null
-      }
+      <Translate />
     </div>
   );
 }
